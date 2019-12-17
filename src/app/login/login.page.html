@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Welcome</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+            <h1>Breweries</h1>
+            <ion-grid>
+                <ion-row color="primary" justify-content-center>
+                  <ion-progress-bar type="indeterminate" *ngIf="loading"></ion-progress-bar>
+                  
+                
+                  <ion-col align-self-center size-md="auto" size-lg="auto" size-xs="auto">
+                  <ul *ngIf="brews">
+                        
+                     <li *ngFor="let brew of brews">
+                       <p class="name">{{ brew.name }}</p>
+                       <p class="country">{{ brew.country }}</p>
+                       <a class="site" href="{{ brew.website_url }}">site</a>
+                     </li>
+                    
+                    </ul>
+                  </ion-col>
+         </ion-row>
+     </ion-grid>            
+  </ion-content>
